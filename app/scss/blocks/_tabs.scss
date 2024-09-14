@@ -1,0 +1,65 @@
+.tabs {
+	display: flex;
+	border: 1.65px solid #181818;
+	border-radius: 50px;
+	max-width: 484px;
+	margin: 0 auto 94px;
+	position: relative;
+	z-index: 1;
+}
+.tab-button {
+	color: #5E5E5B;
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 17px;
+	line-height: 17.85px;
+	font-weight: 500;
+	color: #5E5E5B;
+	text-align: center;
+	border-radius: 50px;
+	display: inline-block;
+	transition: all .2s ease-in-out;
+	width: 162px;
+	height: 50px;
+	position: relative;
+	span {
+		font-family: "Haas Grot Disp R", sans-serif;
+		font-size: 9px;
+		line-height: 14.17px;
+		letter-spacing: 0.03em;
+		text-align: center;
+		font-weight: 500;
+		border: 1px solid #F74421;
+		display: inline-block;
+		border-radius: 50px;
+		margin-left: 5px;
+		padding: 5px;
+		color: #F74421;
+		display: inline-block;
+	}
+	&.active {
+		color: #fff;
+		&::before {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			right: -2px;
+			bottom: -2px;
+			background-color: #F74421;
+			border-radius: 50px;
+			transition: all 0.3s ease;
+			z-index: -1;
+		}
+		span {
+			color: #fff;
+			border: 1px solid #fff;
+		}
+	}
+}
+.tab-content {
+	display: none;
+  }
+  
+  .tab-content.active {
+	display: block;
+  }

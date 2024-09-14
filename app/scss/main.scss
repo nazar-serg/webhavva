@@ -1,0 +1,94 @@
+@use "sass:math";
+@import "./base/mixins";
+@import './base/vars';
+
+// Fonts
+$fontFamily: 'Neue Haas Grotesk Display Pro', sans-serif;
+$fontSize: r(18);
+
+// Minimum Page Width
+$minWidth: 320;
+// Canvas (layout) width
+$maxWidth: 1440;
+// Bounding container width (0 = no limit)
+$maxWidthContainer: 1372;
+// Container's overall padding
+// (30 = 15px left and right, 0 = no padding)
+$containerPadding: 30;
+// Width of the first breakpoint
+$containerWidth: $maxWidthContainer+$containerPadding;
+// break points
+$pc: em($containerWidth); // PCs, laptops, some tablets in landscape position
+$tablet: em(991.98); // Tablets, some phones in landscape position
+$mobile: em(767.98); // L phones
+$mobileSmall: em(479.98); // Phones S
+// Adaptive type:
+// 1 = responsive (container has no breakpoints),
+// 2 = by break points (container changes its width by break points)
+$responsiveType: 1;
+
+body {
+    color: $mainColorText;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    background-color: $mainBg;
+    font-weight: 400;
+}
+
+@if ($responsiveType==1) {
+    // Отзывчивая
+    [class*="__container"] {
+        @if ($maxWidthContainer>0) {
+            max-width: r($maxWidthContainer);
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+        @if ($containerPadding>0) {
+            padding: 0 r(math.div($containerPadding, 2));
+        }
+    }
+}
+
+@else {
+    [class*="__container"] {
+        margin: 0 auto;
+        @if ($maxWidthContainer>0) {
+            max-width: r($maxWidthContainer);
+            box-sizing: content-box;
+        }
+        @else {
+            @if ($containerPadding>0) {
+                padding: 0 r(math.div($containerPadding, 2));
+            }
+        }
+        @media (max-width: $pc) {
+            max-width: r(970);
+        }
+        @media (max-width: $tablet) {
+            max-width: r(750);
+        }
+        @media (max-width: $mobile) {
+            max-width: none;
+            @if ($containerPadding>0 and $maxWidthContainer>0) {
+                padding: 0 r(math.div($containerPadding, 2));
+            }
+        }
+    }
+}
+
+// Base
+@import './base/reset';
+@import './base/base';
+@import './base/buttons';
+
+// Blocks
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/nav-icon';
+@import "./blocks/hero";
+@import "./blocks/our-plans";
+@import "./blocks/tabs";
+
+
+
+

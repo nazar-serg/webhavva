@@ -1,0 +1,148 @@
+.header {
+    padding: 21px 0;
+}
+
+.header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.header__buttons {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+	.header__book-a-call,
+	.header__contact-us {
+		font-family: "Haas Grot Disp R", sans-serif;
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 15.75px;
+		display: inline-block;
+	}
+	.header__book-a-call {
+		background-color: #181818;
+		color: #fff;
+		padding: 12.5px 21px;
+		border-radius: 50px;
+		text-align: center;
+		&:hover {
+			opacity: 0.8;
+		}
+		@media (max-width: 360px) {
+			display: block;
+			width: 100%;
+		}
+	}
+	.header__contact-us {
+		color: #181818;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -3px;
+			height: 1px;
+			background-color: #181818;
+		}
+		&::after {
+			content: url("http://localhost/webhavva/wp-content/uploads/2024/09/str-right.svg");
+			margin-left: 6px;
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+    @media (max-width: $tablet) {
+        display: none!important;
+    }
+}
+
+.header__row--mobile {
+    position: fixed;
+    z-index: 9;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #EFEFED;
+    padding: 80px 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .header__nav {
+        display: block;
+		border: none;
+		height: auto;
+    }
+	.nav {
+		padding-bottom: 40px;
+	}
+    .nav__list {
+        flex-direction: column;
+		justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 20px;
+        li {
+            a {
+                font-family: 'Canela Trial', sans-serif;
+				font-weight: 300;
+				font-size: 36px;
+				line-height: 36px;
+				color:#181818;
+				}
+			}
+    }
+    .header__nav-btn {
+        position: fixed;
+        top: 50px;
+        right: 15px;
+    }
+    .header__logo {
+       display: none;
+    }
+    .header__buttons {
+	   display: flex!important;
+       flex-direction: column;
+	   align-items: flex-start;
+	   row-gap: 29px;
+	   width: 100%;
+	   @media (max-width: 360px) {
+		align-items: center;
+	   }
+    }
+}
+
+.header__nav {
+	border: 1px solid #D9D9D9;
+	border-radius: 50px;
+	height: 41px;
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.header__nav-btn {
+    display: none;
+    @media (max-width: $tablet) {
+        display: block;
+    }
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: all .4s ease-in-out;
+    background: #fff;
+    z-index: 10;
+    padding: 10px 0;
+    .header__row {
+        max-width: 1372px;
+        margin: auto;
+    }
+}

@@ -1,0 +1,16 @@
+.button {
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 15px;
+	line-height: 15.75px;
+	font-weight: 500;
+	color: #fff;
+	padding: 12px 21px;
+	text-align: center;
+	background-color: #F74421;
+	border-radius: 50px;
+	display: inline-block;
+	transition: all .2s ease-in-out;
+	&:hover {
+		opacity: 0.8;
+	}
+}

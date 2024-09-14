@@ -1,0 +1,62 @@
+.our-plans__title {
+	display: flex;
+	font-size: 180px;
+	line-height: 189px;
+	font-weight: 300;
+	font-family: "Canela Trial", sans-serif;
+	letter-spacing: 0.04em;
+	margin: 99px 0 106px;
+	span {
+		display: inline-block;
+		white-space: nowrap;
+		padding: 0 20px; 
+		animation: scroll 40s linear infinite; /* Infinite animation */
+		&::after {
+			content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-for-title.svg");
+			position: relative;
+			left: 20px;
+			bottom: 28px;
+		}
+	}
+
+	@keyframes scroll {
+		0% {
+		  transform: translateX(100%); /* Start outside the container (right) */
+		}
+		100% {
+		  transform: translateX(-100%); /* End outside the container (left) */
+		}
+	  }
+	
+}
+.our-plans__subtitle {
+	font-family: "Canela Trial", sans-serif;
+	font-size: 65px;
+	line-height: 75px;
+	font-weight: 300;
+	letter-spacing: -0.02em;
+	span {
+		font-family: "Haas Grot Disp R", sans-serif;
+		font-weight: 500;
+	}
+}
+.our-plans__headline_with_asterisk {
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 36px;
+	line-height: 37.8px;
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	&::before {
+		content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor.svg");
+	}
+}
+.our-plans__heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 20px;
+	padding-bottom: 77px;
+}
+.our-plans__subtitle {
+	max-width: 721px;
+}
