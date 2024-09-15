@@ -11,6 +11,20 @@
 	display: inline-block;
 	transition: all .2s ease-in-out;
 	&:hover {
-		opacity: 0.8;
+		background-color: #181818;
+	}
+}
+.button--str {
+	&::after {
+		content: url("http://localhost/webhavva/wp-content/uploads/2024/09/str-right-white.svg");
+		margin-left: 8px;
+		display: inline-block;
+		transform: rotate(0deg);
+		transition: transform 0.3s ease; 
+	}
+	&:hover {
+		&::after {
+			transform: rotate(-45deg);
+		}
 	}
 }

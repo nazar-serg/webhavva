@@ -56,10 +56,7 @@
 		}
 	}
 }
-.tab-content {
-	display: none;
-  }
-  
-  .tab-content.active {
-	display: block;
-  }
+.tabs__content {
+	max-width: 1125px;
+	margin: auto;
+}

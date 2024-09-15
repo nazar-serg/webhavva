@@ -1,0 +1,142 @@
+.tab-content {
+	display: none;
+  }
+  
+.tab-content.active {
+	display: block;
+}
+.tab-content__body {
+	display: flex;
+	gap: 15px;
+}
+.tab-content__column {
+	background-color: #fff;
+	border-radius: 23px;
+	padding: 47px 36px 36px 37px;
+	flex: 0 1 25%;
+	&--last-child {
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		padding: 47px 36px;
+	}
+}
+.tab-content__title {
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 28px;
+	line-height: 32px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	text-align: center;
+	margin-bottom: 27px;
+}
+.tab-content__price {
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 32px;
+	line-height: 50.4px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	color: #F74421;
+	text-align: center;
+	margin-bottom: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	span {
+		&:first-child {
+			font-size: 20px;
+			line-height: 31.5px;
+			margin-left: 4px;
+			letter-spacing: 0.03em;
+		}
+		&:last-child {
+			font-size: 9px;
+			line-height: 14.17px;
+			font-weight: 400;
+			margin-left: 4px;
+			letter-spacing: 0.03em;
+			color: #3D3D3D;
+		}
+	}
+}
+.tab-content__sub-title {
+	font-family: "Haas Grot Disp R", sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: #5E5E5B;
+	text-align: center;
+	margin-bottom: 34px;
+}
+.tab-content__btn {
+	text-align: center;
+	&:not(:last-child) {
+		margin-bottom: 51px;
+	}
+	&--last-column {
+		margin-top: 33px;
+	}
+}
+.tab-content__text {
+	p {
+		font-family: "Haas Grot Disp R", sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		color: #5E5E5B;
+		text-align: center;
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+	ul {
+		li {
+			font-family: "Haas Grot Disp R", sans-serif;
+			font-size: 15px;
+			line-height: 30px;
+			font-weight: 500;
+			letter-spacing: 0.03em;
+			color: #181818;
+			&::before {
+				content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-list-yes.svg");
+				margin-right: 8px;
+			}
+			&:nth-child(1) {
+				font-weight: 600;
+			}
+		}
+	}
+	&--concept-design {
+		ul {
+			li {
+				&:nth-child(8),
+				&:nth-child(9),
+				&:nth-child(10),
+				&:nth-child(11) {
+					color: #8A8A8A;
+					&::before {
+						content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-list-no.svg");
+						margin-right: 8px;
+					}
+				}
+				
+			}
+		}
+	}
+	&--product-development {
+		ul {
+			li {
+				&:nth-child(11) {
+					color: #8A8A8A;
+					&::before {
+						content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-list-no.svg");
+						margin-right: 8px;
+					}
+				}
+				
+			}
+		}
+	}
+}
