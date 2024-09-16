@@ -2,7 +2,8 @@
 	background-color: #EFEFED;
 }
 .hero__content {
-	padding: 95px 0 128px;
+	@include adaptiveValue("padding-top", 95, 45);
+	@include adaptiveValue("padding-bottom", 128, 47);
 }
 .hero__title {
 	text-align: center;
@@ -12,7 +13,8 @@
 .hero__title-part-two,
 .hero__title-part-three {
 	font-size: 100px;
-	line-height: 92.51px;
+	@include adaptiveValue("font-size", 100, 42);
+	line-height: math.div(100, 92.51);
 	text-align: center;
 	display: block;
 }
@@ -41,4 +43,41 @@
 .hero__button {
 	display: flex;
 	justify-content: center;
+}
+.hero__book-call {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	@media (min-width: $mobileSmall) {
+		display: none;
+	}
+}
+.hero__book-call-link {
+	color: #181818;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		right: 0;
+		bottom: -3px;
+		height: 1px;
+		background-color: #181818;
+		width: 100%;
+		transition: width .3s ease;
+	}
+	&::after {
+		content: url("http://localhost/webhavva/wp-content/uploads/2024/09/str-right.svg");
+		margin-left: 6px;
+		display: inline-block;
+		transition: transform 0.3s ease;
+	}
+	&:hover {
+		&::before {
+			width: 35%;
+			left: auto;
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
 }

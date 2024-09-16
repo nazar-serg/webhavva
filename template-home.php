@@ -28,6 +28,18 @@ get_header();
 					target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 			</div>
+			<div class="hero__book-call">
+				<?php 
+				$link_book_call = get_field('hero_book_a_call');
+				if( $link_book_call ): 
+					$link_url = $link_book_call['url'];
+					$link_title = $link_book_call['title'];
+					$link_target = $link_book_call['target'] ? $link_book_call['target'] : '_self';
+					?>
+				<a class="hero__book-call-link" href="<?php echo esc_url( $link_url ); ?>"
+					target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </section>
@@ -124,8 +136,13 @@ get_header();
 								</div>
 
 								<div class="tab-content__column">
-									<?php 
+									<?php
 									$monthly_group = get_field("group_monthly_3");
+									?>
+									<div class="tab-content__best-offer">
+										<?php echo $monthly_group['best_offer']; ?>
+									</div>
+									<?php 
 									if ($monthly_group) :
 									$title = $monthly_group['title'];
 									$words = explode(' ', $title );
@@ -186,9 +203,276 @@ get_header();
 								</div>
 							</div>
 						</div>
-						<div class=" tab-content" id="tab-2">Content for Tab 2
+						<div class=" tab-content" id="tab-2">
+							<div class="tab-content__body">
+								<div class="tab-content__column">
+									<?php 
+									$monthly_group = get_field("group_quarterly_1");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text tab-content__text--concept-design">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column">
+									<?php 
+									$monthly_group = get_field("group_quarterly_2");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text tab-content__text--product-development">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column">
+									<?php
+									$monthly_group = get_field("group_quarterly_3");
+									?>
+									<div class="tab-content__best-offer">
+										<?php echo $monthly_group['best_offer']; ?>
+									</div>
+									<?php 
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column tab-content__column--last-child">
+									<?php 
+									$monthly_group = get_field("group_quarterly_4");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<h2 class="tab-content__title">
+										<?php echo $title; ?>
+									</h2>
+									<?php endif; ?>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<?php endif; ?>
+									<div class="tab-content__text">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+									<div class="tab-content__btn tab-content__btn--last-column">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="tab-content" id="tab-3">Content for Tab 3</div>
+						<div class="tab-content" id="tab-3">
+							<div class="tab-content__body">
+								<div class="tab-content__column">
+									<?php 
+									$monthly_group = get_field("group_annual_1");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text tab-content__text--concept-design">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column">
+									<?php 
+									$monthly_group = get_field("group_annual_2");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text tab-content__text--product-development">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column">
+									<?php
+									$monthly_group = get_field("group_annual_3");
+									?>
+									<div class="tab-content__best-offer">
+										<?php echo $monthly_group['best_offer']; ?>
+									</div>
+									<?php 
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<?php echo $title; ?>
+									<?php endif; ?>
+									<div class="tab-content__old-price"><?php echo $monthly_group['old_price']; ?></div>
+									<div class="tab-content__price"><?php echo $monthly_group['price']; ?></div>
+									<h3 class="tab-content__sub-title"><?php echo $monthly_group['sub_title']; ?></h3>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<div class="tab-content__btn">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+									<?php endif; ?>
+									<div class="tab-content__text">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+								</div>
+
+								<div class="tab-content__column tab-content__column--last-child">
+									<?php 
+									$monthly_group = get_field("group_quarterly_4");
+									if ($monthly_group) :
+									$title = $monthly_group['title'];
+									$words = explode(' ', $title );
+									if (count($words) > 1) : ?>
+									<h2 class="tab-content__title">
+										<?php echo $words[0]. '<br>' . implode(' ', array_slice($words, 1)); ?>
+									</h2>
+									<?php else: ?>
+									<h2 class="tab-content__title">
+										<?php echo $title; ?>
+									</h2>
+									<?php endif; ?>
+									<?php
+										$link = $monthly_group['button'];
+										$url = $link['url'];
+										$title = $link['title'];
+										$target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<?php endif; ?>
+									<div class="tab-content__text">
+										<?php echo $monthly_group['text']; ?>
+									</div>
+									<div class="tab-content__btn tab-content__btn--last-column">
+										<a class="tab-content__link button button--str" href="<?php echo $url; ?>">
+											<?php echo $title; ?></a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,38 +1,44 @@
 .our-plans__title {
 	display: flex;
 	font-size: 180px;
-	line-height: 189px;
+	@include adaptiveValue("font-size", 180, 75);
+	line-height: math.div(180, 189);
 	font-weight: 300;
 	font-family: "Canela Trial", sans-serif;
 	letter-spacing: 0.04em;
-	margin: 99px 0 106px;
+	@include adaptiveValue("padding-top", 99, 51);
+	@include adaptiveValue("padding-bottom", 106, 47);
+	overflow: hidden;
 	span {
 		display: inline-block;
 		white-space: nowrap;
 		padding: 0 20px; 
-		animation: scroll 40s linear infinite; /* Infinite animation */
+		animation: scroll 20s linear infinite;
 		&::after {
 			content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-for-title.svg");
 			position: relative;
 			left: 20px;
-			bottom: 28px;
+			@include adaptiveValue("bottom", 28, 14);
+			@media (max-width: $mobileSmall) {
+				content: url("http://localhost/webhavva/wp-content/uploads/2024/09/decor-for-title-responsive.svg");
+			}
 		}
 	}
 
 	@keyframes scroll {
 		0% {
-		  transform: translateX(100%); /* Start outside the container (right) */
+		  transform: translateX(100%);
 		}
 		100% {
-		  transform: translateX(-100%); /* End outside the container (left) */
+		  transform: translateX(-100%);
 		}
 	  }
 	
 }
 .our-plans__subtitle {
 	font-family: "Canela Trial", sans-serif;
-	font-size: 65px;
-	line-height: 75px;
+	@include adaptiveValue("font-size", 65, 45);
+	line-height: math.div(65, 75);
 	font-weight: 300;
 	letter-spacing: -0.02em;
 	span {
@@ -42,8 +48,8 @@
 }
 .our-plans__headline_with_asterisk {
 	font-family: "Haas Grot Disp R", sans-serif;
-	font-size: 36px;
-	line-height: 37.8px;
+	@include adaptiveValue("font-size", 36, 20);
+	line-height: math.div(36, 37.8);
 	font-weight: 300;
 	letter-spacing: 0.04em;
 	&::before {
@@ -54,8 +60,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	column-gap: 20px;
+	gap: 20px;
 	padding-bottom: 77px;
+	@media (max-width: $tablet) {
+		flex-direction: column-reverse;
+		align-items: start;
+	}
+	@media (max-width: $mobileSmall) {
+		padding-bottom: 60px;
+	}
 }
 .our-plans__subtitle {
 	max-width: 721px;
@@ -64,4 +77,7 @@
 	background-color: #EFEFED;
 	border-radius: 30px;
 	padding: 106px 0 134px;
+	@media (max-width: $mobileSmall) {
+		padding: 65px 0 80px;
+	}
 }

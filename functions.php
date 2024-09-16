@@ -13,6 +13,8 @@ function webhavva_setup() {
 	register_nav_menus(
 		array(
 			'header_menu' => esc_html__( 'Header Menu', 'webhavva' ),
+			'footer_menu_left' => esc_html__( 'Footer Menu Left', 'webhavva' ),
+			'footer_menu_right' => esc_html__( 'Footer Menu Right', 'webhavva' ),
 		)
 	);
 
@@ -73,3 +75,24 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+/**
+ * ACF Options
+ */
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+
+}
